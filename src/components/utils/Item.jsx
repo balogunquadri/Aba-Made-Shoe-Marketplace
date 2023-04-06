@@ -1,9 +1,26 @@
 import React from 'react'
+import { useDispatch } from "react-redux";
 import { StarIcon, ShoppingBagIcon } from '@heroicons/react/24/solid';
+import { setAddItemToCart, setOpenCart } from "../../app/CartSlice";
 
 const Item = ({ ifExists, id, color, shadow, title, text, img, btn, rating, price
 }) => {
-    console.log(id)
+    // console.log(id)
+  
+  
+    const dispatch = useDispatch();
+
+    const onAddToCart = () => {
+      const item = { id, title, text, img, color, shadow, price };
+  
+      dispatch(setAddItemToCart(item));
+    };
+  
+    const onCartToggle = () => {
+      dispatch(setOpenCart({
+          cartState: true
+      }))
+  }
     return (
         <>
             <div className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center ${
@@ -20,8 +37,20 @@ const Item = ({ ifExists, id, color, shadow, title, text, img, btn, rating, pric
                     <div className='flex items-center bg-white/80 px-1 rounded'><h1 className='text-black text-sm font-medium'>${price}</h1></div>
                     <div className='flex items-center'><StarIcon className='icon-style w-5 h-5 md:w-4 md:h-4' /><h1 className='md:text-sm font-normal text-slate-100'>{rating}</h1></div>
                 </div>
-                <div className='flex items-center gap-3'><button type='button' className='bg-white blur-effect-theme button-theme p-0.5 shadow shadow-sky-200'><ShoppingBagIcon className='icon-style text-slate-900' /></button>
-                    <button type='button' className='bg-white blur-effect-theme button-theme p-0.5 shadow shadow-sky-200 px-2 py-1'>{btn}</button>
+                <div className='flex items-center gap-3'> <button type="button"
+              className="bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200"
+              onClick={()=> onAddToCart()}
+            >
+              <ShoppingBagIcon className="icon-style text-slate-900" />
+          </button>
+            
+            <button
+              type="button"
+              className="bg-white/90 blur-effect-theme button-theme px-2 py-1 shadow shadow-sky-200 text-sm text-black"
+              onClick={()=> {onAddToCart(); onCartToggle();}}
+            >
+              {btn}
+            </button>
                 </div>
 
 

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 
 const initialState = {
@@ -26,8 +27,10 @@ const CartSlice = createSlice({
                 (item) => item.id === action.payload.id
             );
 
+            // const payload = action.payload
             if (itemIndex >= 0) {
                 state.cartItems[itemIndex].cartQuantity += 1;
+                // console.log(payload)
 
                 toast.success(`Item QTY Increased`);
             } else {
