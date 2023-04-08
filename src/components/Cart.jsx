@@ -28,6 +28,11 @@ const Cart = () => {
             cartState: false
         }))
     }
+
+    const onClearCartItems = () => {
+        dispatch(setClearCartItems())
+    }
+
     return (
         <>
             <div className={`fixed top-0 left-0 right-0 bottom-0 blur-effect-theme w-full h-screen opacity-100 z-[250] ${
