@@ -21,7 +21,7 @@ const CartItem = ({ item: { id, title, text, img, color, shadow, price, cartQuan
                             <button type='button' className='bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90'> <PlusIcon className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]" /> </button>
                         </div>
                     </div>
-                    <div className="grid items-center  gap-5 h-16 w-20 ">
+                    <div className="grid items-center  gap-5 h-16 absolute right-0 ">
                         <div className="grid items-center justify-center">
                             <h1 className="text-lg lg:text-base text-slate-900 font-medium">${price * cartQuantity}</h1>
 

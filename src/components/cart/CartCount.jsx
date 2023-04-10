@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChevronDoubleLeftIcon, XMarkIcon } from '@heroicons/react/24/solid';
-//count update
+
 const CartCount = ({ onCartToggle, totalQTY, onClearCartItems }) => {
     return (
         <>
