@@ -51,8 +51,8 @@ const Stories = ({ story: { title, news } }) => {
                                             <span className="text-xs font-bold">{val.time}</span>
                                         </div>
                                         <div className="flex items-center gap-0.5">
-                                            <HashtagIcon className="icon-style text-blue-600" />
-                                            <span className="text-xs font-bold text-blue-600">{val.by}</span>
+                                            <HashtagIcon className="icon-style text-red-600" />
+                                            <span className="text-xs font-bold text-red-600">{val.by}</span>
                                         </div>
                                     </div>
                                     <div className="grid items-center justify-items-start px-4">
